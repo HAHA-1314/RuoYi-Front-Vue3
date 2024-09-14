@@ -79,7 +79,7 @@ export const constantRoutes = [
   {
     path: "/user",
     component: Layout,
-    hidden: true,
+    hidden: false,
     redirect: "noredirect",
     children: [
       {
@@ -97,7 +97,7 @@ export const dynamicRoutes = [
   {
     path: '/system/user-auth',
     component: Layout,
-    hidden: true,
+    hidden: false,
     permissions: ['system:user:edit'],
     children: [
       {
