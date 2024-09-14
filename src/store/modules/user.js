@@ -1,6 +1,6 @@
-import { login, logout, getInfo } from '@/api/login'
-import { getToken, setToken, removeToken } from '@/utils/auth'
-import defAva from '@/assets/images/profile.jpg'
+import { login, logout, getInfo } from "@/api/login";
+import { getToken, setToken, removeToken } from "@/utils/auth";
+import defAva from "@/assets/images/profile.jpg";
 
 const useUserStore = defineStore("user", {
   state: () => ({
@@ -10,8 +10,14 @@ const useUserStore = defineStore("user", {
     avatar: defAva,
     roles: ["admin"],
     permissions: ["system:dict:list", "system:user:edit"],
+    index_value: "0", //主页选择器 默认为 0 --全部公司
+    index_label: '全部'
   }),
   actions: {
+    setIndex(value,label) {
+      this.index_value = value;
+      this.index_label = label;
+    },
     //   // 登录
     //   login(userInfo) {
     //     const username = userInfo.username.trim();
@@ -76,4 +82,4 @@ const useUserStore = defineStore("user", {
   },
 });
 
-export default useUserStore
+export default useUserStore;
